@@ -20,7 +20,6 @@ export default async function middleware(request: NextRequest) {
     response.cookies.set('csrf-token', generateCsrfToken(), {
         sameSite: 'strict',
         httpOnly: false,
-        expires: new Date(new Date().getTime() + (3600 * 1000)),
     });
 
     return response;

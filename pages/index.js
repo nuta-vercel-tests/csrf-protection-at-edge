@@ -2,8 +2,6 @@ import Cookies from 'js-cookie'
 import { useState } from 'react';
 
 export default function Home() {
-  const [result, setResult] = useState('');
-
   const handleSubmit = async (event) => {
     event.preventDefault()
 
@@ -28,7 +26,7 @@ export default function Home() {
       })
     })
 
-    setResult(resp.statusText);
+    console.log(resp)
   }
     return (
     <div style={{ width: '600px', margin: '5rem auto'}}>
@@ -45,7 +43,8 @@ export default function Home() {
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
 
-      <div>Result: {result}</div>
+      <br></br>
+      <b>Open DevTools to see requests</b>
     </div>
   )
 }
