@@ -5,6 +5,7 @@ function generateCsrfToken(): string {
     return Array.from(bytes).map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
+// https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#double-submit-cookie
 export default async function middleware(request: NextRequest) {
     const response = NextResponse.next();
     
